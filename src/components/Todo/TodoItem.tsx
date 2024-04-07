@@ -10,9 +10,6 @@ interface TodoProps{
 
 const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
 
-    console.log('The TOdo Item', todo)
-
-
     const handleDelete = (id: number) => {
         console.log('Delete', id)
     }
@@ -34,10 +31,10 @@ const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
                     {todo.todo}
                 </Typography>
                 <Box>
-                    <IconButton onClick={e  => handleDelete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={(e: React.FormEvent<EventTarget> )  => handleDelete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Delete />
                     </IconButton>
-                    <IconButton onClick={ e => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={ (e: React.FormEvent<EventTarget>) => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Check />
                     </IconButton>
                 </Box>

@@ -8,7 +8,6 @@ interface TodoProps {
 }
 
 const TodoLists: React.FC<TodoProps> = ({todoList, setTodoList}) => {
-    console.log(todoList, 'From Todo Lists');
     return (
         <div>
             {todoList.map(todo => <TodoItem key={todo.id} todo={todo} setTodoList={setTodoList}/>)}

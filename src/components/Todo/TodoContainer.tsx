@@ -12,7 +12,6 @@ const TODO_LISTS: Todo[] = [
 const TodoContainer: React.FC = () => {
 
     const [todoList, setTodoList] = useState<Todo[]>(TODO_LISTS);
-    console.log('Todo Container: ', todoList)
     return (
         <div>
             <CreateTodo/>
