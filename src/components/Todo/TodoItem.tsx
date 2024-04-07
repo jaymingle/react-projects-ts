@@ -16,10 +16,10 @@ const TodoItem: React.FC= () => {
                     Photos
                 </Typography>
                 <Box>
-                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Menu />
                     </IconButton>
-                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Menu />
                     </IconButton>
                 </Box>
