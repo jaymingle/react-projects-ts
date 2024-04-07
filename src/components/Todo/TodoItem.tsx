@@ -11,13 +11,12 @@ interface TodoProps{
 const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
 
     const handleDelete = (id: number) => {
-        console.log('Delete', id)
+        setTodoList( prevTodoList => prevTodoList.filter(todo => todo.id !== id))
     }
 
     const handleComplete = (id: number) => {
-        console.log('Edit', id)
+        setTodoList(prevTodoList => prevTodoList.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
     }
-
 
     const StyledToolbar = styled(Toolbar)({
         display: "flex",
@@ -27,14 +26,14 @@ const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
     return (
         <AppBar position="static" sx={{margin: '8px 0'}}>
             <StyledToolbar variant="dense">
-                <Typography variant="h6" color="inherit" component="div">
+                <Typography sx={todo.completed ? {textDecoration: 'line-through'} : {}} variant="h6" color="inherit" component="div">
                     {todo.todo}
                 </Typography>
                 <Box>
-                    <IconButton onClick={(e: React.FormEvent<EventTarget> )  => handleDelete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={()  => handleDelete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Delete />
                     </IconButton>
-                    <IconButton onClick={ (e: React.FormEvent<EventTarget>) => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={ () => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Check />
                     </IconButton>
                 </Box>
