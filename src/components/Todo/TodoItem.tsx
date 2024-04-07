@@ -1,6 +1,6 @@
 import React from 'react';
 import {AppBar, Box, IconButton, styled, Toolbar, Typography} from "@mui/material";
-import {Menu} from "@mui/icons-material";
+import {Check, Delete} from "@mui/icons-material";
 
 const TodoItem: React.FC= () => {
 
@@ -17,10 +17,10 @@ const TodoItem: React.FC= () => {
                 </Typography>
                 <Box>
                     <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        <Menu />
+                        <Delete />
                     </IconButton>
                     <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        <Menu />
+                        <Check />
                     </IconButton>
                 </Box>
             </StyledToolbar>
