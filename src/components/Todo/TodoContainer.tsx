@@ -3,9 +3,9 @@ import CreateTodo from "./CreateTodo.tsx";
 import TodoLists from "./TodoLists.tsx";
 
 const TODO_LISTS = [
-    {id: 1, todo: 'Cook', isDone: false},
-    {id: 2, todo: 'Clean My Room', isDone: false},
-    {id: 3, todo: 'Go Grocery Shopping', isDone: false},
+    {id: 1, todo: 'Cook', completed: false},
+    {id: 2, todo: 'Clean My Room', completed: false},
+    {id: 3, todo: 'Go Grocery Shopping', completed: false},
 ]
 
 const TodoContainer: React.FC = () => {
