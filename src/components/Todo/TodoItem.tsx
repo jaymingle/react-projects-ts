@@ -10,7 +10,7 @@ const TodoItem: React.FC= () => {
     })
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{margin: '8px 0'}}>
             <StyledToolbar variant="dense">
                 <Typography variant="h6" color="inherit" component="div">
                     Photos
