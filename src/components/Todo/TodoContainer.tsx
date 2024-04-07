@@ -16,7 +16,7 @@ const TodoContainer: React.FC = () => {
     return (
         <div>
             <CreateTodo/>
-            <TodoLists/>
+            <TodoLists todoList={todoList} setTodoList={setTodoList}/>
         </div>
     );
 };
