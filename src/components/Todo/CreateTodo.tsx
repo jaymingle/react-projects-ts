@@ -1,10 +1,12 @@
 import React from 'react';
+import {Box, TextField} from "@mui/material";
 
 const CreateTodo: React.FC= () => {
     return (
-        <div>
-            I am the Create Todo
-        </div>
+        <Box>
+            <TextField autoFocus id="outlined-basic" placeholder="Enter To Do" variant="outlined" />
+
+        </Box>
     );
 };
 
