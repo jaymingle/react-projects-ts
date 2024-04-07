@@ -1,9 +1,26 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {AppBar, Box, IconButton, styled, Toolbar, Typography} from "@mui/material";
 import {Check, Delete} from "@mui/icons-material";
 import Todo from "../../model.ts";
 
-const TodoItem: React.FC= () => {
+interface TodoProps{
+    todo: Todo[],
+    setTodoList: Dispatch<SetStateAction<Todo[]>>
+}
+
+const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
+
+    console.log('The TOdo Item', todo)
+
+
+    const handleDelete = (id: number) => {
+        console.log('Delete', id)
+    }
+
+    const handleComplete = (id: number) => {
+        console.log('Edit', id)
+    }
+
 
     const StyledToolbar = styled(Toolbar)({
         display: "flex",
@@ -14,13 +31,13 @@ const TodoItem: React.FC= () => {
         <AppBar position="static" sx={{margin: '8px 0'}}>
             <StyledToolbar variant="dense">
                 <Typography variant="h6" color="inherit" component="div">
-                    Photos
+                    {todo.todo}
                 </Typography>
                 <Box>
-                    <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={e  => handleDelete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Delete />
                     </IconButton>
-                    <IconButton color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                    <IconButton onClick={ e => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                         <Check />
                     </IconButton>
                 </Box>
