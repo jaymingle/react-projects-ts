@@ -12,7 +12,7 @@ const CreateTodo: React.FC= () => {
 
     return (
         <StyledBox>
-            <TextField sx={{width: '60%'}} autoFocus id="outlined-basic" placeholder="Enter To Do" variant="standard" />
+            <TextField sx={{width: '70%'}} autoFocus id="outlined-basic" placeholder="Enter To Do" variant="standard" />
             <Button variant="contained">Add Todo</Button>
         </StyledBox>
     );
