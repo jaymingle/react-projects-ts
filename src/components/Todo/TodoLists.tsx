@@ -4,14 +4,14 @@ import Todo from "../../model.ts";
 
 interface TodoProps {
     todoList: Todo[],
-    setTodoLists: Dispatch<SetStateAction<Todo[]>>
+    setTodoList: Dispatch<SetStateAction<Todo[]>>
 }
 
-const TodoLists: React.FC<TodoProps> = ({todoList, setTodoLists}) => {
+const TodoLists: React.FC<TodoProps> = ({todoList, setTodoList}) => {
     console.log(todoList, 'From Todo Lists');
     return (
         <div>
-            {todoList.map(todo => <TodoItem key={todo.id} todo={todo} />)}
+            {todoList.map(todo => <TodoItem key={todo.id} todo={todo} setTodoList={setTodoList}/>)}
         </div>
     );
 };

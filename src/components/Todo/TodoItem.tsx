@@ -1,6 +1,7 @@
 import React from 'react';
 import {AppBar, Box, IconButton, styled, Toolbar, Typography} from "@mui/material";
 import {Check, Delete} from "@mui/icons-material";
+import Todo from "../../model.ts";
 
 const TodoItem: React.FC= () => {
 
