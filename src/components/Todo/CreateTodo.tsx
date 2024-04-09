@@ -16,8 +16,6 @@ const CreateTodo: React.FC= () => {
     const todoSubmitHandler = (e) => {
         e. preventDefault();
         console.log('Clicked')
-        // console.log(todo)
-        // setTodo('')
     }
 
     return (
