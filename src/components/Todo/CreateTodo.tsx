@@ -19,9 +19,6 @@ const CreateTodo: React.FC<PropValues> = ({setTodoList}) => {
 
     const todoSubmitHandler = (e) => {
         e. preventDefault();
-        // console.log('Clicked')
-
-
 
     }
 
