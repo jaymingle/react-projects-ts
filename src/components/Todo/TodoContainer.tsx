@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CreateTodo from "./CreateTodo.tsx";
 import TodoLists from "./TodoLists.tsx";
 import Todo from "../../model.ts";
-import {Box} from "@mui/material";
+import {Box, Checkbox, FormControlLabel} from "@mui/material";
 
 const TODO_LISTS: Todo[] = [
     {id: 1, todo: 'Cook', completed: false},
@@ -12,11 +12,17 @@ const TODO_LISTS: Todo[] = [
 
 const TodoContainer: React.FC = () => {
 
+    const [filterCompleted, filterSetCompleted] = useState<boolean>(false)
     const [todoList, setTodoList] = useState<Todo[]>(TODO_LISTS);
+
+    const filterCompletedHandler = () => {
+
+    }
+
     return (
         <div>
-            <Box>
-
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+                <FormControlLabel onChange={filterCompletedHandler} control={<Checkbox />} label="Completed Todo" />
             </Box>
             <CreateTodo setTodoList={setTodoList} />
             <TodoLists todoList={todoList} setTodoList={setTodoList}/>
