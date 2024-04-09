@@ -14,7 +14,7 @@ const TodoContainer: React.FC = () => {
     const [todoList, setTodoList] = useState<Todo[]>(TODO_LISTS);
     return (
         <div>
-            <CreateTodo/>
+            <CreateTodo setTodoList={setTodoList} />
             <TodoLists todoList={todoList} setTodoList={setTodoList}/>
         </div>
     );

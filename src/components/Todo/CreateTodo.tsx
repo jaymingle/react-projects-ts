@@ -2,7 +2,11 @@ import React, {useState} from 'react';
 import {Box, Button, styled, TextField} from "@mui/material";
 import Todo from "../../model.ts";
 
-const CreateTodo: React.FC= () => {
+interface PropValues {
+    setTodoList:  React.Dispatch<React.SetStateAction<Todo[]>>
+}
+
+const CreateTodo: React.FC<PropValues> = ({setTodoList}) => {
 
     const[todo, setTodo] = useState<string>('');
 
