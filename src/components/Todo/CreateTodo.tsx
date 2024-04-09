@@ -20,9 +20,10 @@ const CreateTodo: React.FC= () => {
 
     return (
         <StyledBox>
-            <form onSubmit={todoSubmitHandler}></form>
-            <TextField sx={{width: '70%'}} value={todo} onChange={e => setTodo(e.target.value)} autoFocus id="outlined-basic" placeholder="Enter To Do" variant="standard" />
-            <Button type="submit" variant="contained">Add Todo</Button>
+            <form onSubmit={todoSubmitHandler}>
+                <TextField sx={{width: '70%'}} value={todo} onChange={e => setTodo(e.target.value)} autoFocus id="outlined-basic" placeholder="Enter To Do" variant="standard" />
+                <Button type="submit" variant="contained">Add Todo</Button>
+            </form>
         </StyledBox>
     );
 };
