@@ -13,10 +13,6 @@ const CreateTodo: React.FC= () => {
         padding: '20px 0'
     })
 
-    // const styled = {
-    //     width: '100%',
-    // }
-
     const todoSubmitHandler = (e) => {
         e. preventDefault();
         console.log('Clicked')
@@ -24,7 +20,7 @@ const CreateTodo: React.FC= () => {
 
     return (
         <StyledBox>
-            <form style={} onSubmit={todoSubmitHandler}>
+            <form style={{width: '80%', display: 'flex', gap: '20px'}} onSubmit={todoSubmitHandler}>
                 <TextField sx={{width: '70%'}} value={todo} onChange={e => setTodo(e.target.value)} autoFocus id="outlined-basic" placeholder="Enter To Do" variant="standard" />
                 <Button type="submit" variant="contained">Add Todo</Button>
             </form>
