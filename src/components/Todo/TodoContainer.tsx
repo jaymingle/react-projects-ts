@@ -12,18 +12,21 @@ const TODO_LISTS: Todo[] = [
 
 const TodoContainer: React.FC = () => {
 
-    const [filterCompleted, filterSetCompleted] = useState<boolean>(false)
+    const [filterCompleted, setFilterCompleted] = useState<boolean>(false)
     const [todoList, setTodoList] = useState<Todo[]>(TODO_LISTS);
 
     const filterCompletedHandler = () => {
-
+        setFilterCompleted(value => !value)
     }
+
+    console.log(filterCompleted)
 
     return (
         <div>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>
-                <FormControlLabel onChange={filterCompletedHandler} control={<Checkbox />} label="Completed Todo" />
+                <FormControlLabel onChange={filterCompletedHandler} control={<Checkbox checked={filterCompleted} />} label="Completed Todo" />
             </Box>
+            {filterCompleted && <p>The Filtered Has Been Done</p>}
             <CreateTodo setTodoList={setTodoList} />
             <TodoLists todoList={todoList} setTodoList={setTodoList}/>
         </div>
