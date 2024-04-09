@@ -20,6 +20,7 @@ const CreateTodo: React.FC<PropValues> = ({setTodoList}) => {
     const todoSubmitHandler = (e) => {
         e. preventDefault();
         setTodoList(todos => [...todos, {id: Date.now(), todo, completed: false}]);
+        setTodo('')
     }
 
     return (
