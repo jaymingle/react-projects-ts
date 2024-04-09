@@ -19,8 +19,6 @@ const TodoContainer: React.FC = () => {
         setFilterCompleted(value => !value)
     }
 
-    console.log(filterCompleted)
-
     return (
         <div>
             <Box sx={{display: 'flex', justifyContent: 'center'}}>

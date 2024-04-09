@@ -34,7 +34,7 @@ const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
                         <Delete />
                     </IconButton>
                     <IconButton onClick={ () => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        {true ? <Check/> : <Clear/>}
+                        {todo.completed ? <Clear/> : <Check/>}
                     </IconButton>
                 </Box>
             </StyledToolbar>
