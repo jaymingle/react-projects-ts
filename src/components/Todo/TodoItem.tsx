@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import {AppBar, Box, IconButton, styled, Toolbar, Typography} from "@mui/material";
-import {Check, Delete} from "@mui/icons-material";
+import {Check, Clear, Delete} from "@mui/icons-material";
 import Todo from "../../model.ts";
 
 interface TodoProps{
@@ -34,7 +34,7 @@ const TodoItem: React.FC<TodoProps> = ({todo, setTodoList}) => {
                         <Delete />
                     </IconButton>
                     <IconButton onClick={ () => handleComplete(todo.id)} color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        <Check />
+                        {true ? <Check/> : <Clear/>}
                     </IconButton>
                 </Box>
             </StyledToolbar>
