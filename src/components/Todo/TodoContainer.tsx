@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import CreateTodo from "./CreateTodo.tsx";
 import TodoLists from "./TodoLists.tsx";
 import Todo from "../../model.ts";
+import {Box} from "@mui/material";
 
 const TODO_LISTS: Todo[] = [
     {id: 1, todo: 'Cook', completed: false},
@@ -14,6 +15,9 @@ const TodoContainer: React.FC = () => {
     const [todoList, setTodoList] = useState<Todo[]>(TODO_LISTS);
     return (
         <div>
+            <Box>
+
+            </Box>
             <CreateTodo setTodoList={setTodoList} />
             <TodoLists todoList={todoList} setTodoList={setTodoList}/>
         </div>
